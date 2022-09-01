@@ -1,5 +1,9 @@
 @extends('admin.master')
 
+@section('title')
+    Products
+@endsection
+
 @section('content')
 <div class="col-xl-12 col-lg-12 col-md-12">
     <div class="card">
