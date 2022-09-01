@@ -37,12 +37,12 @@ Route::get('/test', function () {
  * 
  */
 
-Route::prefix('admin/appointments')->controller(AppointmentController::class)->group(function () {
+Route::prefix('admin/appointments')->controller(AppointmentController::class)->name('admin.appointemnt.')->group(function () {
     Route::get('/', 'list');
     Route::get('/{id}', 'detail')->where('id', '[0-9]+');
 
     Route::get('/add', 'add');
-    Route::post('/new', 'store');
+    Route::post('/new', 'store')->name('store');
     
     Route::get('/edit', 'edit');
     Route::put('/update/{id}', 'update')->where('id', '[0-9]+');
