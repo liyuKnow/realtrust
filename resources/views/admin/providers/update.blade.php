@@ -15,7 +15,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="card-body collapse in">
             <div class="card-block">
                 @include('admin.providers.provider_form')

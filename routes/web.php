@@ -49,7 +49,7 @@ Route::prefix('admin/appointments')->controller(AppointmentController::class)->n
     Route::get('/add', 'add');
     Route::post('/new', 'store')->name('store');
     
-    Route::get('/edit', 'edit');
+    Route::get('/edit', 'edit')->name('edit')->where('id', '[0-9]+');
     Route::put('/update/{id}', 'update')->where('id', '[0-9]+');
     Route::delete('/delete/{id}', 'delete')->where('id', '[0-9]+');
 });
@@ -68,8 +68,8 @@ Route::prefix('admin/providers')->controller(ProviderController::class)->name('a
     Route::post('/new', 'store')->name('store');
     
     Route::get('/edit/{id}', 'edit')->name('edit')->where('id', '[0-9]+');
-    Route::put('/update/{id}', 'update')->where('id', '[0-9]+');
-    Route::delete('/delete/{id}', 'delete')->where('id', '[0-9]+');
+    Route::put('/update', 'update')->name('update');
+    Route::delete('/delete/{id}', 'delete')->name('delete')->where('id', '[0-9]+');
 });
 
 

@@ -41,11 +41,12 @@
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <a href="{{ route('admin.providers.detail' , [ 'id' => $item->id])}}" type="button" class="rounded btn btn-success mr-1"><i class="icon-eye"></i></a>
                                         <a href="{{ route('admin.providers.edit' , [ 'id' => $item->id])}}" type="button" class="rounded btn btn-primary mr-1"><i class="icon-pencil"></i></a>
-                                        <a href="#" type="button" class="rounded btn btn-danger"><i class="icon-trash"></i></a>
+                                        <button data-toggle="modal" data-target="#iconModal" type="button" class="rounded btn btn-danger"><i class="icon-trash"></i></button>
                                     </div>
                                 </div>
                             </td>
                         </tr>
+                        @include('admin.providers.delete_modal')
                        @empty
                         <tr >
                             <td colspan="6" class="text-xs-center">No {{$page_title}} found yet!</td>

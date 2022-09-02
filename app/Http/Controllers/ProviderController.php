@@ -58,18 +58,30 @@ class ProviderController extends Controller
 
     }
 
-    public function edit (Request $req)
+    public function edit ($id)
     {
+        $provider = Provider::where( 'id' , $id)->first();
 
+        return view('admin.providers.update')->with(['provider' => $provider]);
     }
 
     public function update (Request $req)
     {
+        $updatedProvider = Provider::where("id", $req->id)->update($req->except('id', '_method', '_token'));
+
+            if ($updatedProvider) {
+                return redirect('/admin/providers/');
+            }
 
     }
 
-    public function delete (Request $req)
+    public function delete ($id)
     {
+        $provider = Provider::find($id);
+        $provider->destroy();
 
+        return view('admin.providers.delete')->with([
+            'provider' => $provider
+        ]);
     }
 }

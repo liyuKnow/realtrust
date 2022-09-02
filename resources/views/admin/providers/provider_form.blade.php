@@ -1,11 +1,26 @@
-<form class="form" action="{{ route ('admin.providers.store')}}" method="POST">
+<form class="form" method="POST" action="{{ route ( isset($provider->id) ? 'admin.providers.update' : 'admin.providers.store')}}">
+    @if (isset($provider->id))
+        @method('PUT')
+    @else
+        @method('POST')
+    @endif
     @csrf
     <div class="form-body">
         <div class="row">
             <div class="col-md-6 offset-md-2">
                 <div class="form-group">
                     <label for="projectinput5">Real Estate Provider Name</label>
-                    <input class="form-control border-primary" type="name" name="name" placeholder="Provider Name" id="userinput5">
+                    @if (isset($provider->id))
+                        <input hidden name="id" value="{{$provider->id}}" />
+                    @endif
+                    <input
+                     class="form-control border-primary" 
+                     type="name" 
+                     name="name" 
+                     placeholder="Provider Name" 
+                     id="userinput5"
+                     value = "{{ isset($provider->name) ? $provider->name : '' }}"
+                     >
                 </div>
             </div>
         </div>
