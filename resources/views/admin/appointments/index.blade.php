@@ -26,11 +26,10 @@
                     <thead>
                         <tr>
                             <th>#id</th>
-                            <th>Provider</th>
-                            <th>Status</th>
-                            <th>Price</th>
-                            <th>Type</th>
-                            <th>Berooms</th>
+                            <th>Sales</th>
+                            <th>Client</th>
+                            <th>Time of the Day</th>
+                            <th>Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,7 +50,7 @@
                         </tr>
                        @empty
                         <tr >
-                            <td colspan="6" class="text-xs-center text-md-center">No employees found yet!</td>
+                            <td colspan="6" class="text-xs-center">No employees found yet!</td>
                         </tr>
                        @endforelse
                     </tbody>

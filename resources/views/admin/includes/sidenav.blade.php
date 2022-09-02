@@ -8,25 +8,25 @@
     <div class="main-menu-content">
       <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
         <li class=" nav-item">
-          <a href="/admin"><i class="icon-home"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Home</span></a>
+          <a href="/admin/home/"><i class="icon-home"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Home</span></a>
         </li>
         <li class=" nav-item">
           <a href="{{route('site')}}"><i class="icon-android-globe"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Real Trust</span></a>
         </li>
         <li class=" nav-item">
-          <a href="/products"><i class="icon-bookmark"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Providers</span></a>
+          <a href="/admin/providers/"><i class="icon-bookmark"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Providers</span></a>
         </li>
         <li class=" nav-item">
-          <a href="/admin"><i class="icon-office"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Products</span></a>
+          <a href="/admin/products/"><i class="icon-office"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Products</span></a>
         </li>
         <li class=" nav-item">
-          <a href="{{route('site')}}"><i class="icon-ios-briefcase"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Clients</span></a>
+          <a href="/admin/clients/"><i class="icon-ios-briefcase"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Clients</span></a>
         </li>
         <li class=" nav-item">
-          <a href="/products"><i class="icon-android-clipboard"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Appointments</span></a>
+          <a href="/admin/appointments/"><i class="icon-android-clipboard"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Appointments</span></a>
         </li>
         <li class=" nav-item">
-          <a href="/products"><i class="icon-android-contacts"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Users</span></a>
+          <a href="/admin/users/"><i class="icon-android-contacts"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Users</span></a>
         </li>
         <!-- <li class=" nav-item"><a href="#"><i class="icon-android-funnel"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Menu levels</span></a>
           <ul class="menu-content">
