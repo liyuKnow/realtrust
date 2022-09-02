@@ -62,12 +62,12 @@ Route::prefix('admin/appointments')->controller(AppointmentController::class)->n
 
 Route::prefix('admin/providers')->controller(ProviderController::class)->name('admin.providers.')->group(function () {
     Route::get('/', 'list');
-    Route::get('/{id}', 'detail')->where('id', '[0-9]+');
+    Route::get('/{id}', 'detail')->name('detail')->where('id', '[0-9]+');
 
     Route::get('/add', 'add');
     Route::post('/new', 'store')->name('store');
     
-    Route::get('/edit', 'edit');
+    Route::get('/edit/{id}', 'edit')->name('edit')->where('id', '[0-9]+');
     Route::put('/update/{id}', 'update')->where('id', '[0-9]+');
     Route::delete('/delete/{id}', 'delete')->where('id', '[0-9]+');
 });

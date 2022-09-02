@@ -39,8 +39,8 @@
                                 <div class="form-group">
                                     <!-- button group -->
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="#" type="button" class="rounded btn btn-success mr-1"><i class="icon-eye"></i></a>
-                                        <a href="#" type="button" class="rounded btn btn-primary mr-1"><i class="icon-pencil"></i></a>
+                                        <a href="{{ route('admin.providers.detail' , [ 'id' => $item->id])}}" type="button" class="rounded btn btn-success mr-1"><i class="icon-eye"></i></a>
+                                        <a href="{{ route('admin.providers.edit' , [ 'id' => $item->id])}}" type="button" class="rounded btn btn-primary mr-1"><i class="icon-pencil"></i></a>
                                         <a href="#" type="button" class="rounded btn btn-danger"><i class="icon-trash"></i></a>
                                     </div>
                                 </div>

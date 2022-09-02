@@ -48,7 +48,7 @@ class ProviderController extends Controller
 
     public function detail ($id)
     {
-        $provider = Provider::get($id);
+        $provider = Provider::where( 'id' , $id)->first();
 
         return view('admin.providers.detail')->with(['provider' => $provider]);
     }
