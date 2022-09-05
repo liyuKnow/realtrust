@@ -61,7 +61,7 @@ Route::prefix('admin/appointments')->controller(AppointmentController::class)->n
  */
 
 Route::prefix('admin/providers')->controller(ProviderController::class)->name('admin.providers.')->group(function () {
-    Route::get('/', 'list');
+    Route::get('/', 'list')->name('list');
     Route::get('/{id}', 'detail')->name('detail')->where('id', '[0-9]+');
 
     Route::get('/add', 'add');

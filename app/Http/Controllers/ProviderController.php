@@ -78,10 +78,9 @@ class ProviderController extends Controller
     public function delete ($id)
     {
         $provider = Provider::find($id);
-        $provider->destroy();
+        // dd($provider);
+        $provider->delete();
 
-        return view('admin.providers.delete')->with([
-            'provider' => $provider
-        ]);
+        return redirect()->route('admin.providers.list');
     }
 }

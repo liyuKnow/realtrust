@@ -37,6 +37,7 @@
     <!-- BEGIN Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset ('robust/assets/css/style.css') }}">
     <!-- END Custom CSS-->
+    @yield('style')
   </head>
   <body data-open="click" data-menu="vertical-menu" data-col="2-columns" class="vertical-layout vertical-menu 2-columns  fixed-navbar">
 
@@ -84,5 +85,6 @@
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="{{ asset ('robust/app-assets/js/scripts/pages/dashboard-lite.js') }}" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
+    @yield('script')
   </body>
 </html>

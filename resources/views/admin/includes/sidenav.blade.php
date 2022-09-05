@@ -11,10 +11,10 @@
           <a href="/admin/home/"><i class="icon-home"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Home</span></a>
         </li>
         <li class=" nav-item">
-          <a href="{{route('site')}}"><i class="icon-android-globe"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Real Trust</span></a>
+          <a href="/admin/providers/"><i class="icon-bookmark"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Sites</span></a>
         </li>
         <li class=" nav-item">
-          <a href="/admin/providers/"><i class="icon-bookmark"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Providers</span></a>
+          <a href="{{route('site')}}"><i class="icon-android-globe"></i><span data-i18n="nav.menu_levels.main" class="menu-title">realtrust.com</span></a>
         </li>
         <li class=" nav-item">
           <a href="/admin/products/"><i class="icon-office"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Products</span></a>

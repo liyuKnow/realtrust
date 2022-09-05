@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('title') Login @endsection
+@section('title') Admin Home @endsection
 
 @section('content')
 

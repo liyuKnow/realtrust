@@ -4,6 +4,10 @@
  {{($page_title)}}
 @endsection
 
+@section('style')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/5.0.7/sweetalert2.min.css" rel="stylesheet">
+@endsection
+
 @section('content')
 <div class="col-xl-12 col-lg-12 col-md-12">
     <div class="card">
@@ -41,7 +45,12 @@
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <a href="{{ route('admin.providers.detail' , [ 'id' => $item->id])}}" type="button" class="rounded btn btn-success mr-1"><i class="icon-eye"></i></a>
                                         <a href="{{ route('admin.providers.edit' , [ 'id' => $item->id])}}" type="button" class="rounded btn btn-primary mr-1"><i class="icon-pencil"></i></a>
-                                        <button data-toggle="modal" data-target="#iconModal" type="button" class="rounded btn btn-danger"><i class="icon-trash"></i></button>
+                                        {{-- <button data-toggle="modal" data-target="#iconModal" type="button" class="rounded btn btn-danger"><i class="icon-trash"></i></button> --}}
+                                        <form method="POST" action="{{ route('admin.providers.delete', $item->id) }}">
+                                            @csrf
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button type="submit" class="btn btn-danger show-alert-delete-box" data-toggle="tooltip" title='Delete'><i class="icon-trash"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                             </td>
@@ -58,4 +67,29 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script type="text/javascript">
+    $('.show-alert-delete-box').click(function(event){
+        var form =  $(this).closest("form");
+        var name = $(this).data("name");
+        event.preventDefault();
+        swal({
+            title: "Are you sure you want to delete this record?",
+            text: "If you delete this, it will be gone forever.",
+            icon: "warning",
+            type: "warning",
+            buttons: ["Cancel","Yes!"],
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((willDelete) => {
+            if (willDelete) {
+                form.submit();
+            }
+        });
+    });
+</script>
 @endsection
