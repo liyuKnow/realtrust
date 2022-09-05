@@ -9,10 +9,10 @@ class SiteController extends Controller
 {
     public function list ()
     {
-        $Sites = Site::all();
+        $sites = Site::all();
             
         return view('admin.Sites.index')->with([
-            'Sites' => $Sites,
+            'Sites' => $sites,
             'page_title' => 'Sites'
         ]);
     }

@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('title')
-    {{Sites}}
+    {{$page_title}}
 @endsection
 
 @section('content')
