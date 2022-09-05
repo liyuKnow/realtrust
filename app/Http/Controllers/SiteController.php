@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Provider;
 use App\Models\Site;
 use Illuminate\Http\Request;
 
@@ -11,16 +12,18 @@ class SiteController extends Controller
     {
         $sites = Site::all();
             
-        return view('admin.Sites.index')->with([
-            'Sites' => $sites,
-            'page_title' => 'Sites'
+        return view('admin.sites.index')->with([
+            'sites' => $sites,
+            'page_title' => 'sites'
         ]);
     }
 
     public function add () 
     {
-        return view('admin.Sites.add')->with([
-            'page_title' => 'Sites'
+        $providers = Provider::all();
+        return view('admin.sites.add')->with([
+            'page_title' => 'sites',
+            'providers' => $providers
         ]);
     }
 
@@ -39,7 +42,7 @@ class SiteController extends Controller
 
             if ($Site->save()) 
             {
-                return redirect('/admin/Sites/');
+                return redirect('/admin/sites/');
             }
         // } else {
         //     return view('admin.Sites.new');
@@ -49,9 +52,9 @@ class SiteController extends Controller
 
     public function detail ($id)
     {
-        $Site = Site::where( 'id' , $id)->first();
+        $site = Site::where( 'id' , $id)->first();
 
-        return view('admin.Sites.detail')->with(['Site' => $Site]);
+        return view('admin.sites.detail')->with(['site' => $site]);
     }
 
     public function search (Request $req)
@@ -61,18 +64,18 @@ class SiteController extends Controller
 
     public function edit ($id)
     {
-        $Site = Site::where( 'id' , $id)->first();
+        $site = Site::where( 'id' , $id)->first();
 
-        return view('admin.Sites.update')->with(['Site' => $Site]);
+        return view('admin.sites.update')->with(['site' => $site]);
     }
 
     public function update (Request $req)
     {
         $updatedSite = Site::where("id", $req->id)->update($req->except('id', '_method', '_token'));
 
-            if ($updatedSite) {
-                return redirect('/admin/Sites/');
-            }
+        if ($updatedSite) {
+            return redirect('/admin/sites/');
+        }
 
     }
 
@@ -82,6 +85,6 @@ class SiteController extends Controller
         // dd($Site);
         $Site->delete();
 
-        return redirect()->route('admin.Sites.list');
+        return redirect()->route('admin.sites.list');
     }
 }

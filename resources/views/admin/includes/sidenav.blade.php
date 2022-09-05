@@ -14,6 +14,9 @@
           <a href="/admin/sites/"><i class="icon-bookmark"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Sites</span></a>
         </li>
         <li class=" nav-item">
+          <a href="/admin/providers/"><i class="icon-bookmark"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Providers</span></a>
+        </li>
+        <li class=" nav-item">
           <a href="{{route('site')}}"><i class="icon-android-globe"></i><span data-i18n="nav.menu_levels.main" class="menu-title">realtrust.com</span></a>
         </li>
         <li class=" nav-item">
