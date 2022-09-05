@@ -13,10 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sub_cities', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('site_id');
             $table->string('name');
-            $table->integer('woreda');
+            $table->integer('bedroom')->nullable();
+            $table->float('size')->nullable();
+            $table->boolean('sold')->default(0);
+
+            $table->foreign('site_id')->references('id')->on('sites');
             $table->timestamps();
         });
     }
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sub_cities');
+        Schema::dropIfExists('stocks');
     }
 };

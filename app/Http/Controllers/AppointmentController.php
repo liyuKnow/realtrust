@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Appointment;
 use App\Models\Client;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -14,7 +13,7 @@ class AppointmentController extends Controller
     {
         $appointments = DB::table('appointments')
             ->join('users', 'users.id', '=', 'appointments.user_id')
-            ->join('clients', 'clients.id', '=', 'clients.client_id')
+            ->join('clients', 'clients.id', '=', 'appointments.client_id')
             ->get();
             
         return view('admin.appointments.index')->with(['appointments' => $appointments]);

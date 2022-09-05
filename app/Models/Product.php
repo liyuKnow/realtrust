@@ -30,5 +30,4 @@ class Product extends Model
     public function location () {
         return $this->hasOne(Location::class);
     }
-    
 }

@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('site_id');
             $table->unsignedBigInteger('city_id');
             $table->unsignedBigInteger('sub_city_id');
             $table->integer('woreda');
             $table->string('description');
 
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('site_id')->references('id')->on('sites');
             $table->foreign('city_id')->references('id')->on('cities');
-            $table->foreign('sub_city_id')->references('id')->on('sub_cities');
+            $table->foreign('sub_city_id')->references('id')->on('subcities');
             $table->timestamps();
         });
     }

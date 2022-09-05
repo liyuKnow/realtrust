@@ -13,22 +13,23 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('sites', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('provider_id');
-            $table->enum('product_type', ['villa', 'appartment', 'land']); // villa, apartment, land, 
-            $table->integer('featured_size');
-            $table->integer('discount');
-            $table->string('tags');
-            $table->string('features');
-            $table->boolean('status');
-            $table->integer('featured_bedrooms');
-            $table->float('price');
             $table->string('img_1');
             $table->string('img_2');
             $table->string('img_3');
             $table->string('video_url');
-            $table->enum('offer_type', ['sale', 'rent']); // sale, rent
+            $table->string('features');
+            $table->enum('product_type', ['Villa', 'Apartment', 'Duplex', 'Land']); // villa, apartment, land,
+            $table->integer('floors');
+            $table->integer('delivery');
+            $table->integer('featured_bedrooms')->nullable();
+            $table->integer('featured_size')->nullable();
+            $table->integer('total_houses')->nullable();
+            $table->integer('total_shops')->nullable();
+            $table->float('house_price_per_carre')->nullable();
+            $table->float('shop_price_per_carre')->nullable();
 
             $table->foreign('provider_id')->references('id')->on('providers');
             $table->timestamps();
@@ -42,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('sites');
     }
 };

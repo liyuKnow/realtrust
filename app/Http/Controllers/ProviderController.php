@@ -17,7 +17,8 @@ class ProviderController extends Controller
         ]);
     }
 
-    public function add () {
+    public function add () 
+    {
         return view('admin.providers.add')->with([
             'page_title' => 'providers'
         ]);

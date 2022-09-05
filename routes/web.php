@@ -3,6 +3,7 @@
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProviderController;
+use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session as Session;
@@ -52,6 +53,24 @@ Route::prefix('admin/appointments')->controller(AppointmentController::class)->n
     Route::get('/edit', 'edit')->name('edit')->where('id', '[0-9]+');
     Route::put('/update/{id}', 'update')->where('id', '[0-9]+');
     Route::delete('/delete/{id}', 'delete')->where('id', '[0-9]+');
+});
+
+
+/**
+ *  Sites Route(s)
+ * 
+ */
+
+Route::prefix('admin/sites')->controller(SiteController::class)->name('admin.providers.')->group(function () {
+    Route::get('/', 'list')->name('list');
+    Route::get('/{id}', 'detail')->name('detail')->where('id', '[0-9]+');
+
+    Route::get('/add', 'add');
+    Route::post('/new', 'store')->name('store');
+    
+    Route::get('/edit/{id}', 'edit')->name('edit')->where('id', '[0-9]+');
+    Route::put('/update', 'update')->name('update');
+    Route::delete('/delete/{id}', 'delete')->name('delete')->where('id', '[0-9]+');
 });
 
 
