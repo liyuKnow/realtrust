@@ -26,8 +26,7 @@ return new class extends Migration
             $table->integer('delivery');
             $table->integer('featured_bedrooms')->nullable();
             $table->integer('featured_size')->nullable();
-            $table->integer('total_houses')->nullable();
-            $table->integer('total_shops')->nullable();
+            $table->integer('houses_per_floor')->nullable();
             $table->float('house_price_per_carre')->nullable();
             $table->float('shop_price_per_carre')->nullable();
 

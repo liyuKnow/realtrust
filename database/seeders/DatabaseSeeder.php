@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             // ProductSeeder::class,
             UserSeeder::class,
             CitySeeder::class,
-            SubCitySeeder::class
+            SubCitySeeder::class,
+            ProviderSeeder::class
         ]);
     }
 }
