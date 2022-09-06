@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Feature;
 use App\Models\Provider;
 use App\Models\Site;
 use Illuminate\Http\Request;
@@ -21,9 +22,13 @@ class SiteController extends Controller
     public function add () 
     {
         $providers = Provider::all();
+
+        $features = Feature::all();
+
         return view('admin.sites.add')->with([
             'page_title' => 'sites',
-            'providers' => $providers
+            'providers' => $providers,
+            'features' => $features
         ]);
     }
 

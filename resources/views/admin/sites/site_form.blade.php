@@ -191,27 +191,11 @@
                                 
                                 
                                 <div class="form-group">
-                                        <input type="checkbox" id="remember-me" checked class="chk-remember ml-2">
-                                        <label for="remember-me">Lift</label>
-
-                                        <input type="checkbox" id="remember-me" checked class="chk-remember ml-2">
-                                        <label for="remember-me">Security Cam</label>
-                                    
-                                    
-                                        <input type="checkbox" id="remember-me" checked class="chk-remember ml-2">
-                                        <label for="remember-me">Parking</label>
-
-                                        <input type="checkbox" id="remember-me" checked class="chk-remember ml-2">
-                                        <label for="remember-me">Lift</label>
-                                    
-                                    
-                                        <input type="checkbox" id="remember-me" checked class="chk-remember ml-2">
-                                        <label for="remember-me">Garbadge Shoot</label>
-                                    
-                                    
-                                        <input type="checkbox" id="remember-me" checked class="chk-remember ml-2">
-                                        <label for="remember-me">Parking</label>
-                                    </div>
+                                    @foreach($features as $feature)
+                                        <input type="checkbox" name="features[]" id="remember-me" checked class="chk-remember ml-2" value="{{$feature->id}}">
+                                        <label for="remember-me">{{$feature->name}}</label>
+                                    @endforeach
+                                </div>
                                 
                             </div>
                         </div>
