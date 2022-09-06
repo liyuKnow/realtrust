@@ -34,23 +34,42 @@ class SiteController extends Controller
 
     public function store (Request $req)
     {
-        // validate
+        // validate 
+        // $path = $request->file('image')->store('public/images'); // save images with store method
         // if ($req->session()->has('user') ) 
         // if (true) 
         // {
             $this->validate($req, [
-                'name' => 'required|string',
+                'provider_id' => 'required|string',
+                'image' => 'required|image|mimes:jpg,png,jpeg|max:2048'
             ]);
 
-            $Site = new Site();
-            $Site->name = $req->name;
+            $site = new Site();
 
-            if ($Site->save()) 
+            $site->provider_id = $req->provider_id;
+
+            // save images
+            $site->img_1 = $req->img_1;
+            $site->img_2 = $req->img_2;
+            $site->img_3 = $req->img_3;
+
+            $site->video_url = $req->video_url;
+            $site->features = $req->features;
+            $site->product_type = $req->product_type;
+            $site->floors = $req->floors;
+            $site->delivery = $req->delivery;
+            $site->featured_bedrooms = $req->featured_bedrooms;
+            $site->featured_size = $req->featured_size;
+            $site->houses_per_floor = $req->houses_per_floor;
+            $site->house_price_per_carre = $req->house_price_per_carre;
+            $site->shop_price_per_carre = $req->shop_price_per_carre;
+
+            if ($site->save()) 
             {
                 return redirect('/admin/sites/');
             }
         // } else {
-        //     return view('admin.Sites.new');
+        //     return view('admin.sites.new');
         // }
 
     }

@@ -1,4 +1,4 @@
-<form class="form" method="POST" action="{{ route ( isset($site->id) ? 'admin.sites.update' : 'admin.sites.store')}}">
+<form class="form" method="POST" action="{{ route ( isset($site->id) ? 'admin.sites.update' : 'admin.sites.store')}}" enctype="multipart/form-data">
     @if (isset($site->id))
         @method('PUT')
     @else
@@ -16,21 +16,42 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
+                            <label>Select File</label>
+                            <label  class="file center-block">
+                                <input name="img_1" type="file" id="img_1">
+                                <span class="file-custom"></span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Select File</label>
+                            <label class="file center-block">
+                                <input name="img_2" type="file" id="img_2">
+                                <span class="file-custom"></span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Select File</label>
+                            <label  class="file center-block">
+                                <input name="img_3" type="file" id="img_3">
+                                <span class="file-custom"></span>
+                            </label>
+                        </div>
+                        <div class="form-group">
                             <label for="projectinput5">Product Image(s)</label>
                         </div>
                         <figure class="col-md-6 col-xs-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="https://i.pravatar.cc/400?img=36" itemprop="contentUrl" data-size="480x360">
-                                <img class="img-thumbnail img-fluid" src="https://i.pravatar.cc/400?img=36" itemprop="thumbnail" alt="Image description" />
+                                <img id="img_1_preview" class="img-thumbnail img-fluid" src="https://i.pravatar.cc/400?img=36" itemprop="thumbnail" alt="Image description" />
                             </a>
                         </figure>
                         <figure class="col-md-6 col-xs-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="https://i.pravatar.cc/400?img=36" itemprop="contentUrl" data-size="480x360">
-                                <img class="img-thumbnail img-fluid" src="https://i.pravatar.cc/400?img=36" itemprop="thumbnail" alt="Image description" />
+                                <img id="img_2_preview" class="img-thumbnail img-fluid" src="https://i.pravatar.cc/400?img=36" itemprop="thumbnail" alt="Image description" />
                             </a>
                         </figure>
                         <figure class="col-md-6 col-xs-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="https://i.pravatar.cc/400?img=36" itemprop="contentUrl" data-size="480x360">
-                                <img class="img-thumbnail img-fluid" src="https://i.pravatar.cc/400?img=36" itemprop="thumbnail" alt="Image description" />
+                                <img id="img_3_preview" class="img-thumbnail img-fluid" src="https://i.pravatar.cc/400?img=36" itemprop="thumbnail" alt="Image description" />
                             </a>
                         </figure>
                     </div>
@@ -192,7 +213,7 @@
                                 
                                 <div class="form-group">
                                     @foreach($features as $feature)
-                                        <input type="checkbox" name="features[]" id="remember-me" checked class="chk-remember ml-2" value="{{$feature->id}}">
+                                        <input type="checkbox" name="features[]" id="remember-me" checked class="chk-remember ml-2" value="{{$feature->name}}">
                                         <label for="remember-me">{{$feature->name}}</label>
                                     @endforeach
                                 </div>
@@ -217,3 +238,4 @@
         </button>
     </div>
 </form>
+
