@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('provider_id');
+            $table->string('name');
             $table->string('img_1');
             $table->string('img_2');
             $table->string('img_3');

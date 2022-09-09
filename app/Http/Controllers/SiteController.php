@@ -47,11 +47,46 @@ class SiteController extends Controller
             $site = new Site();
 
             $site->provider_id = $req->provider_id;
+            $site->name = $req->name;
 
             // save images
-            $site->img_1 = $req->img_1;
-            $site->img_2 = $req->img_2;
-            $site->img_3 = $req->img_3;
+            if ($req->hasFile('img_1')) {
+                // rename image
+                $newImageName = time() . '-' . $req->name . '.' . $req->img_1->extension();
+                // upload image
+                $req->img_1->move(public_path('uploads/images/sites/'), $newImageName);
+
+
+                $site->img_1 = 'uploads/images/sites/' . $newImageName;
+            } else {
+                $site->img_1 = 'uploads/images/sites/default.png';
+            }
+
+            // save images
+            if ($req->hasFile('img_2')) {
+                // rename image
+                $newImageName = time() . '-' . $req->name . '.' . $req->img_2->extension();
+                // upload image
+                $req->img_2->move(public_path('uploads/images/sites/'), $newImageName);
+
+
+                $site->img_2 = 'uploads/images/sites/' . $newImageName;
+            } else {
+                $site->img_2 = 'uploads/images/sites/default.png';
+            }
+
+            // save images
+            if ($req->hasFile('img_3')) {
+                // rename image
+                $newImageName = time() . '-' . $req->name . '.' . $req->img_3->extension();
+                // upload image
+                $req->img_3->move(public_path('uploads/images/sites/'), $newImageName);
+
+
+                $site->img_3 = 'uploads/images/sites/' . $newImageName;
+            } else {
+                $site->img_3 = 'uploads/images/sites/default.png';
+            }
 
             $site->video_url = $req->video_url;
             $site->features = $req->features;

@@ -75,6 +75,11 @@
                     <div class="col-md-12">
 
                         <div class="form-group">
+                            <label for="provider">Site Name</label>
+                            <input id="provider" class="form-control" type="text" name="name" />
+                        </div>
+
+                        <div class="form-group">
                             <label for="provider">Provider</label>
                             <select id="provider" name="provider" class="form-control">
                                 @if (!empty($providers))
