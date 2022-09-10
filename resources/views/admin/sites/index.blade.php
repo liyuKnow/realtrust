@@ -23,7 +23,7 @@
         </div>
         <div class="card-body">
             <div class="card-block">
-                <p>Products <span class="float-xs-right"><a href="/admin/sites/add" class="btn btn-success">Add New Product</a></span></p>
+                <p>Products <span class="float-xs-right"><a href="/admin/sites/add" class="btn btn-success">Add New {{$page_title}}</a></span></p>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover mb-0">
@@ -31,6 +31,8 @@
                         <tr>
                             <th>#id</th>
                             <th>Name</th>
+                            <th>Type</th>
+                            <th>Price (/mm<sup>2<sup>)</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -38,7 +40,9 @@
                        @forelse ($sites as $item)
                         <tr>
                             <td class="text-truncate"><a href="#">{{$item->id}}</a></td>
-                            <td class="text-truncate">{{$item->name}} Real Estate</td>
+                            <td class="text-truncate">{{$item->name}} Site</td>
+                            <td class="text-truncate">{{$item->product_type}}</td>
+                            <td class="text-truncate">${{$item->house_price_per_carre}}</td>
                             <td class="text-truncate">
                                 <div class="form-group">
                                     <!-- button group -->

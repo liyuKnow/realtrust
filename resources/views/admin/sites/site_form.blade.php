@@ -81,7 +81,7 @@
 
                         <div class="form-group">
                             <label for="provider">Provider</label>
-                            <select id="provider" name="provider" class="form-control">
+                            <select id="provider" name="provider_id" class="form-control">
                                 @if (!empty($providers))
                                     <option value="none" selected="" disabled="">Provider</option>
                                     @foreach ($providers as $provider)

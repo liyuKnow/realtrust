@@ -24,8 +24,8 @@
             <div class="form-group">
                 <!-- button group -->
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <a href="/admin/providers/" type="button" class="rounded btn btn-info mr-1"><i class="icon-arrow-left4"></i> Back</a>
-                    <a href="{{ route('admin.providers.edit' , [ 'id' => $provider->id])}}" type="button" class="rounded btn btn-primary mr-1"><i class="icon-pencil"></i> Edit</a>
+                    <a href="/admin/sites/" type="button" class="rounded btn btn-info mr-1"><i class="icon-arrow-left4"></i> Back</a>
+                    <a href="{{ route('admin.sites.edit' , [ 'id' => $site->id])}}" type="button" class="rounded btn btn-primary mr-1"><i class="icon-pencil"></i> Edit</a>
                     <a href="#" type="button" class="rounded btn btn-danger"><i class="icon-trash"></i> Delete</a>
                 </div>
             </div>
@@ -33,7 +33,10 @@
 
         <div class="card-body collapse in">
             <div class="card-block">
-                <h1>Name : {{$provider->name}} Real Estate</h1>
+                <h1>Name : {{$site->name}} Real Estate</h1>
+            </div>
+            <div class="card-block">
+                <img src="{{asset($site->img_1)}}" alt="Product Image 1">
             </div>
         </div>
     </div>
