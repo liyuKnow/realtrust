@@ -118,6 +118,7 @@ class SiteController extends Controller
     {
         $site = Site::where('id', $id)->first();
 
+
         return view('admin.sites.detail')->with(['site' => $site]);
     }
 
@@ -128,8 +129,9 @@ class SiteController extends Controller
     public function edit($id)
     {
         $site = Site::where('id', $id)->first();
+        $features = Feature::all();
 
-        return view('admin.sites.update')->with(['site' => $site]);
+        return view('admin.sites.update')->with(['site' => $site, 'features' => $features]);
     }
 
     public function update(Request $req)

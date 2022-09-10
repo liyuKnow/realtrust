@@ -76,7 +76,7 @@
 
                         <div class="form-group">
                             <label for="provider">Site Name</label>
-                            <input id="provider" class="form-control" type="text" name="name" />
+                            <input id="provider" class="form-control" type="text" name="name" value="{{$site->name ? $site->name : ''}}" />
                         </div>
 
                         <div class="form-group">

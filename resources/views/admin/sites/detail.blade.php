@@ -36,7 +36,7 @@
                 <h1>Name : {{$site->name}} Real Estate</h1>
             </div>
             <div class="card-block">
-                <img src="{{asset($site->img_1)}}" alt="Product Image 1">
+                <img src="{{asset($site->img_1)}}" alt="Product Image 1" style="width:230px; height:230px" class="img-fluid">
             </div>
         </div>
     </div>
