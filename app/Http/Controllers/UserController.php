@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Site;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    function index () 
+    {
+        $sites = Site::all();
+
+        return view('site.home.index')->with([
+            'sites' => $sites
+        ]);
+    }
+
     function login(Request $request)
     {
         $username = $request->input('username');
@@ -36,7 +46,7 @@ class UserController extends Controller
         }
 
         if($user->user_role == 'sales' || $user->user_role == 'client' ){
-            return view('site.home.index');
+            return redirect('/');
         }
 
         // $employees = Employee::all();

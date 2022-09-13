@@ -116,7 +116,7 @@ class SiteController extends Controller
 
     public function detail($id)
     {
-        $site = Site::where('id', $id)->first();
+        $site = Site::find($id);
 
 
         return view('admin.sites.detail')->with(['site' => $site]);

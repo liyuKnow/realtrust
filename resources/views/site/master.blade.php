@@ -73,6 +73,10 @@
                       <a href="{{route('login')}}" class="aa-login">Login</a>
                     @else
                       <a href="{{route('logout')}}" class="aa-login">Logout</a>
+                      @if(session('user')->user_role === 'admin')
+                      |
+                        <a href="{{route('admin.home')}}" class="aa-login">Admin Panel</a>
+                      @endif
                     @endif
                   </div>
                 </div>

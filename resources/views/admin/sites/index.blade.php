@@ -32,7 +32,7 @@
                             <th>#id</th>
                             <th>Name</th>
                             <th>Type</th>
-                            <th>Price (/mm<sup>2<sup>)</th>
+                            <th>Price (/mm<sup>2</sup>)</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
