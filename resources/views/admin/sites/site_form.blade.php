@@ -40,18 +40,18 @@
                             <label for="projectinput5">Product Image(s)</label>
                         </div>
                         <figure class="col-md-6 col-xs-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="https://i.pravatar.cc/400?img=36" itemprop="contentUrl" data-size="480x360">
-                                <img id="img_1_preview" class="img-thumbnail img-fluid" src="https://i.pravatar.cc/400?img=36" itemprop="thumbnail" alt="Image description" />
+                            <a href={{isset($site) ? asset($site->img_1) : asset('uploads/images/sites/default.png')}} itemprop="contentUrl" data-size="480x360">
+                                <img id="img_1_preview" class="img-thumbnail img-fluid" src={{isset($site) ? asset($site->img_1) : asset('uploads/images/sites/default.png')}} itemprop="thumbnail" alt="Image description" />
                             </a>
                         </figure>
                         <figure class="col-md-6 col-xs-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="https://i.pravatar.cc/400?img=36" itemprop="contentUrl" data-size="480x360">
-                                <img id="img_2_preview" class="img-thumbnail img-fluid" src="https://i.pravatar.cc/400?img=36" itemprop="thumbnail" alt="Image description" />
+                            <a href={{isset($site) ? asset($site->img_2) : asset('uploads/images/sites/default.png')}} itemprop="contentUrl" data-size="480x360">
+                                <img id="img_2_preview" class="img-thumbnail img-fluid" src={{isset($site) ? asset($site->img_2) : asset('uploads/images/sites/default.png')}} itemprop="thumbnail" alt="Image description" />
                             </a>
                         </figure>
                         <figure class="col-md-6 col-xs-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="https://i.pravatar.cc/400?img=36" itemprop="contentUrl" data-size="480x360">
-                                <img id="img_3_preview" class="img-thumbnail img-fluid" src="https://i.pravatar.cc/400?img=36" itemprop="thumbnail" alt="Image description" />
+                            <a href={{isset($site) ? asset($site->img_3) : asset('uploads/images/sites/default.png')}} itemprop="contentUrl" data-size="480x360">
+                                <img id="img_3_preview" class="img-thumbnail img-fluid" src={{isset($site) ? asset($site->img_3) : asset('uploads/images/sites/default.png')}} itemprop="thumbnail" alt="Image description" />
                             </a>
                         </figure>
                     </div>
@@ -244,3 +244,50 @@
     </div>
 </form>
 
+@section('script')
+<script type="text/javascript">
+$(document).ready(function (e) {
+ 
+   
+    $('#img_1').change(function(){
+             
+     let reader = new FileReader();
+  
+     reader.onload = (e) => { 
+  
+       $('#img_1_preview').attr('src', e.target.result); 
+     }
+  
+     reader.readAsDataURL(this.files[0]); 
+    
+    });
+
+    $('#img_2').change(function(){
+             
+        let reader = new FileReader();
+    
+        reader.onload = (e) => { 
+    
+        $('#img_2_preview').attr('src', e.target.result); 
+        }
+    
+        reader.readAsDataURL(this.files[0]); 
+    
+    });
+
+    $('#img_3').change(function(){
+        
+        let reader = new FileReader();
+    
+        reader.onload = (e) => { 
+    
+        $('#img_3_preview').attr('src', e.target.result); 
+        }
+    
+        reader.readAsDataURL(this.files[0]); 
+    
+    });
+    
+ });
+</script>
+@endsection

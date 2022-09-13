@@ -52,7 +52,7 @@ class SiteController extends Controller
         // save images
         if ($req->hasFile('img_1')) {
             // rename image
-            $newImageName = time() . '-' . $req->name . '.' . $req->img_1->extension();
+            $newImageName = time() . '-' . str_replace(' ', '_',$req->name) . '_1.' . $req->img_1->extension();
             // upload image
             $req->img_1->move(public_path('uploads/images/sites/'), $newImageName);
 
@@ -65,7 +65,7 @@ class SiteController extends Controller
         // save images
         if ($req->hasFile('img_2')) {
             // rename image
-            $newImageName = time() . '-' . $req->name . '.' . $req->img_2->extension();
+            $newImageName = time() . '-' . str_replace(' ', '_',$req->name) . '_2.' . $req->img_2->extension();
             // upload image
             $req->img_2->move(public_path('uploads/images/sites/'), $newImageName);
 
@@ -78,7 +78,7 @@ class SiteController extends Controller
         // save images
         if ($req->hasFile('img_3')) {
             // rename image
-            $newImageName = time() . '-' . $req->name . '.' . $req->img_3->extension();
+            $newImageName = time() . '-' . str_replace(' ', '_',$req->name) . '_3.' . $req->img_3->extension();
             // upload image
             $req->img_3->move(public_path('uploads/images/sites/'), $newImageName);
 
