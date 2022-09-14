@@ -17,19 +17,20 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('provider_id');
             $table->string('name');
+            $table->string('name_amh');
             $table->string('img_1');
             $table->string('img_2');
             $table->string('img_3');
             $table->string('video_url');
             $table->string('features');
-            $table->enum('product_type', ['Villa', 'Apartment', 'Duplex', 'Land']); // villa, apartment, land,
+            $table->enum('product_type', ['ቪላ ቤት', 'አፓርትመንት ቤቶች', 'ዱፕሌክስ አፓርታማዎች', 'መሬት']); // villa, apartment, land,
             $table->integer('floors');
             $table->integer('delivery');
             $table->integer('featured_bedrooms')->nullable();
             $table->integer('featured_size')->nullable();
             $table->integer('houses_per_floor')->nullable();
-            $table->float('house_price_per_carre')->nullable();
-            $table->float('shop_price_per_carre')->nullable();
+            $table->float('price')->nullable();
+            $table->float('shop_price')->nullable();
 
             $table->foreign('provider_id')->references('id')->on('providers');
             $table->timestamps();

@@ -73,12 +73,19 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-12">
-
+                        {{-- Site name --}}
                         <div class="form-group">
-                            <label for="provider">Site Name</label>
-                            <input id="provider" class="form-control" type="text" name="name" value="{{isset($site->name) ? $site->name : ''}}" />
+                            <label for="name">Site Name</label>
+                            <input id="name" class="form-control" type="text" name="name" value="{{isset($site->name) ? $site->name : ''}}" />
                         </div>
 
+                        {{-- Site name Amharic --}}
+                        <div class="form-group">
+                            <label for="name_amh">Site Name (በአማርኛ)</label>
+                            <input id="name_amh" class="form-control" type="text" name="name_amh" value="{{isset($site->name_amh) ? $site->name_amh : ''}}" />
+                        </div>
+
+                        {{-- provider --}}
                         <div class="form-group">
                             <label for="provider">Provider</label>
                             <select id="provider" name="provider_id" class="form-control">
@@ -93,17 +100,19 @@
                             </select>
                         </div>
 
+                        {{-- product type --}}
                         <div class="form-group">
                             <label for="product_type">Product Type</label>
                             <select id="product_type" name="product_type" class="form-control">
                                 <option value="none" selected="" disabled="">Product Type</option>                                          
-                                <option value="apartment">Apartment</option>                                          
-                                <option value="duplex">Duplex</option>                                          
-                                <option value="villa">Villa</option>                                          
-                                <option value="land">Land</option>                                          
+                                <option value="አፓርትመንት ቤቶች">አፓርትመንት ቤቶች</option>                                          
+                                <option value="ዱፕሌክስ አፓርታማዎች">ዱፕሌክስ አፓርታማዎች</option>                                          
+                                <option value="ቪላ">ቪላ</option>                                          
+                                <option value="መሬት">መሬት</option>                                          
                             </select>
                         </div>
 
+                        {{-- floors --}}
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -133,6 +142,7 @@
                             </div>
                         </div>
 
+                        {{-- featured bedrooms and size --}}
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -162,6 +172,7 @@
                             </div>
                         </div>
 
+                        {{-- house per floor and house price --}}
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -178,35 +189,37 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="house_price_per_carre">House Price Per Square Meter</label>
+                                    <label for="price">House Price Per Square Meter</label>
                                     <input
                                      class="form-control" 
                                      type="number" 
-                                     name="house_price_per_carre" 
+                                     name="price" 
                                      placeholder="Featured Size" 
-                                     id="house_price_per_carre"
-                                     value = "{{ isset($site->house_price_per_carre) ? $site->house_price_per_carre : '' }}"
+                                     id="price"
+                                     value = "{{ isset($site->price) ? $site->price : '' }}"
                                     />
                                 </div>
                             </div>
                         </div>
 
+                        {{-- shop price --}}
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="shop_price_per_carre">Shop Price Per Square Meter</label>
+                                    <label for="shop_price">Shop Price Per Square Meter</label>
                                     <input
                                      class="form-control" 
                                      type="number" 
-                                     name="shop_price_per_carre" 
+                                     name="shop_price" 
                                      placeholder="Featured Size" 
-                                     id="shop_price_per_carre"
-                                     value = "{{ isset($site->shop_price_per_carre) ? $site->shop_price_per_carre : '' }}"
+                                     id="shop_price"
+                                     value = "{{ isset($site->shop_price) ? $site->shop_price : '' }}"
                                     />
                                 </div>
                             </div>
                         </div>
 
+                        {{-- features --}}
                         <div class="row">
                             {{-- <div class="row"> --}}
                                 <div class="col-md-12">

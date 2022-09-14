@@ -26,7 +26,7 @@ class ProviderController extends Controller
 
     public function store (Request $req)
     {
-        dd($req->all());
+        // dd($req->all());
 
         // validate
         // if ($req->session()->has('user') ) 

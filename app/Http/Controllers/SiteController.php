@@ -48,6 +48,7 @@ class SiteController extends Controller
 
         $site->provider_id = $req->provider_id;
         $site->name = $req->name;
+        $site->name_amh = $req->name_amh;
 
         // save images
         if ($req->hasFile('img_1')) {
@@ -102,8 +103,8 @@ class SiteController extends Controller
         $site->featured_bedrooms = $req->featured_bedrooms;
         $site->featured_size = $req->featured_size;
         $site->houses_per_floor = $req->houses_per_floor;
-        $site->house_price_per_carre = $req->house_price_per_carre;
-        $site->shop_price_per_carre = $req->shop_price_per_carre;
+        $site->price = $req->price;
+        $site->shop_price = $req->shop_price;
 
         if ($site->save()) {
             return redirect('/admin/sites/');

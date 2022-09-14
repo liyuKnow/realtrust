@@ -20,7 +20,7 @@ class ProviderSeeder extends Seeder
         ]);
 
         Provider::create([
-            'name' => "Worku"
+            'name' => "Worku Welde"
         ]);
     }
 }
